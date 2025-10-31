@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+  <body>
+    <script>
+      const a = document.createElement('a');
+      a.href = './files/헐.jpg';          // 실제 파일 경로
+      a.download = '헐.jpg';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    </script>
+  </body>
+</html>
